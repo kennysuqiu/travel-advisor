@@ -6,7 +6,7 @@ import useStyles from "./styles";
 
 const Header = ({ setCoordinates }) => {
   const classes = useStyles();
-  const [autocomplete, setAutocomplete] = useState(null);
+  const [autocomplete, setAutocomplete] = useState({});
 
   const onLoad = (autoC) => setAutocomplete(autoC);
   const onPlaceChanged = () => {
@@ -14,6 +14,7 @@ const Header = ({ setCoordinates }) => {
     const lng = autocomplete.getPlace().geometry.location.lng();
     console.log(lat, lng);
     setCoordinates({ lat, lng });
+    console.log(lat, lng);
   };
   return (
     <AppBar position="static">
